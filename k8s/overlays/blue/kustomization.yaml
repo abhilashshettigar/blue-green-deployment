@@ -5,13 +5,16 @@ namespace: blue-green-deployment
 
 namePrefix: blue-
 
-commonLabels:
-  version: blue
-  environment: production
 
 resources:
-  - ../../base
+- ../../base
 
-patchesStrategicMerge:
-  - deployment-patch.yaml
-  - service-patch.yaml
+labels:
+- includeSelectors: true
+  pairs:
+    environment: production
+    version: blue
+    
+patches:
+- path: deployment-patch.yaml
+- path: service-patch.yaml

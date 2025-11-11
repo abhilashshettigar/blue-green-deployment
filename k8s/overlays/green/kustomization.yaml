@@ -5,18 +5,15 @@ namespace: blue-green-deployment
 
 namePrefix: green-
 
-commonLabels:
-  version: green
-  environment: production
 
 resources:
-  - ../../base
+- ../../base
 
-patchesStrategicMerge:
-  - deployment-patch.yaml
-  - service-patch.yaml
-
-# images:
-#   - name: yourusername/nginx-blue
-#     newName: yourusername/nginx-green
-#     newTag: latest
+labels:
+- includeSelectors: true
+  pairs:
+    environment: production
+    version: green
+patches:
+- path: deployment-patch.yaml
+- path: service-patch.yaml

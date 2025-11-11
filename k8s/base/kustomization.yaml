@@ -5,5 +5,8 @@ resources:
   - deployment.yaml
   - service.yaml
 
-commonLabels:
-  managed-by: kustomize
+labels:
+- includeSelectors: true
+  pairs:
+    managed-by: kustomize
+    
