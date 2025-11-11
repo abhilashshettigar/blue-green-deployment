@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: hello-world-app-service
 spec:
+  type: NodePort
   selector:
     version: blue
     environment: production
