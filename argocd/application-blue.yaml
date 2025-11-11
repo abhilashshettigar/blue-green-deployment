@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: blue-green-deployment
+  name: blue-deployment
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io

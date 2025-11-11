@@ -14,6 +14,7 @@ resources:
 
 patchesStrategicMerge:
   - deployment-patch.yaml
+  - service-patch.yaml
 
 # images:
 #   - name: yourusername/nginx-blue
