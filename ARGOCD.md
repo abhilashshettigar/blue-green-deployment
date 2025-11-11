@@ -19,7 +19,6 @@ argocd login localhost:8080
 
 
 
-
 #Install Rollouts Controller
 ## Create the namespace and deploy the Rollouts controller:​
 
@@ -37,3 +36,7 @@ brew install argoproj/tap/kubectl-argo-rollouts
 Agrocd login 
 admin
 Admin@123
+
+
+# Apply Applciation.yaml from argocd folder
+kubectl apply -f application.yaml
