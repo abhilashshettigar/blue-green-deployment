@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: hello-world-app
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+
+  strategy:
+    blueGreen:
+      activeService: hello-world-app-svc
+      previewService: hello-world-app-preview-svc
+      autoPromotionEnabled: false   # <-- USE MANUAL PROMOTION IN PROD
+
+  selector:
+    matchLabels:
+      app: hello-world-app
+
+  template:
+    metadata:
+      labels:
+        app: hello-world-app
+
+    spec:
+      containers:
+      - name: hello-world-app
+        image: abhilashshettigar/poc:nginx-blue-latest  # PATCHED IN OVERLAY
+        ports:
+          - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 3
+          periodSeconds: 5

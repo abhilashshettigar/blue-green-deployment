@@ -1,0 +1,8 @@
+
+namespace: blue-green-deployment
+
+resources:
+  - ../../base
+
+patches:
+  - path: patch.yaml

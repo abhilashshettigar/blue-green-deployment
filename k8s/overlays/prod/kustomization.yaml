@@ -1,0 +1,10 @@
+
+namespace: blue-green-deployment
+
+namePrefix: prod-
+
+resources:
+  - ../../base
+
+patches:
+  - path: patch.yaml
