@@ -4,5 +4,7 @@ namespace: blue-green-deployment
 resources:
   - ../../base
 
+namePrefix: dev-
+
 patches:
   - path: patch.yaml

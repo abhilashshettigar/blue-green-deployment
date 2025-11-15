@@ -4,8 +4,29 @@ metadata:
   name: hello-world-app
 spec:
   replicas: 1
+  strategy:
+    blueGreen:
+      activeService: dev-hello-world-app-svc
+      previewService: dev-hello-world-app-preview-svc
   template:
     spec:
       containers:
       - name: webapp
         image: abhilashshettigar/poc:nginx-blue-latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-app-svc
+spec:
+  selector:
+    app: dev-hello-world-app
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world-app-preview-svc
+spec:
+  selector:
+    app: dev-hello-world-app
