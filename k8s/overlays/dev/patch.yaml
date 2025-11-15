@@ -8,4 +8,4 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: abhilashshettigar/poc:nginx-blue-2.0
+        image: abhilashshettigar/poc:nginx-green-latest
