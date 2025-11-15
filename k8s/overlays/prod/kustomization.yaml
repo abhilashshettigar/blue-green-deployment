@@ -1,5 +1,5 @@
 
-namespace: production-blue-green-deployment
+namespace: production-dev-blue-green-deployment
 
 resources:
   - ../../base

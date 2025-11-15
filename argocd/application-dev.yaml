@@ -3,9 +3,10 @@ kind: Application
 metadata:
   name: webapp-dev
 spec:
+  project: default
   destination:
     namespace: dev-blue-green-deployment        
-    name: in-cluster
+    server: https://kubernetes.default.svc
   source:
     repoURL: https://github.com/abhilashshettigar/blue-green-deployment.git
     targetRevision: main

@@ -1,5 +1,5 @@
 
-namespace: staging-blue-green-deployment
+namespace: staging-dev-blue-green-deployment
 
 resources:
   - ../../base

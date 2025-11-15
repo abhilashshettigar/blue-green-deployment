@@ -3,8 +3,9 @@ kind: Application
 metadata:
   name: webapp-staging
 spec:
+  project: default
   destination:
-    namespace: staging-blue-green-deployment        
+    namespace: staging-dev-blue-green-deployment      
     name: in-cluster
   source:
     repoURL: https://github.com/abhilashshettigar/blue-green-deployment.git
