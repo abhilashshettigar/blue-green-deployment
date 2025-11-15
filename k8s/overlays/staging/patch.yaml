@@ -20,7 +20,7 @@ metadata:
   name: hello-world-app-svc
 spec:
   selector:
-    app: staging-hello-world-app
+    app: hello-world-app
 
 ---
 apiVersion: v1
@@ -29,4 +29,4 @@ metadata:
   name: hello-world-app-preview-svc
 spec:
   selector:
-    app: staging-hello-world-app
+    app: hello-world-app

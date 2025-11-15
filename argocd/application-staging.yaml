@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: webapp-staging
+spec:
+  destination:
+    namespace: staging-blue-green-deployment        
+    name: in-cluster
+  source:
+    repoURL: https://github.com/abhilashshettigar/blue-green-deployment.git
+    targetRevision: main
+    path: k8s/overlays/staging
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

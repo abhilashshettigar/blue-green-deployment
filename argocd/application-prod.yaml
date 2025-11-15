@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: webapp-production
+spec:
+  destination:
+    namespace: production-blue-green-deployment        
+    name: in-cluster
+  source:
+    repoURL: https://github.com/abhilashshettigar/blue-green-deployment.git
+    targetRevision: main
+    path: k8s/overlays/prod
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
