@@ -1,7 +1,5 @@
 
-namespace: blue-green-deployment
-
-namePrefix: staging-
+namespace: staging-blue-green-deployment
 
 resources:
   - ../../base

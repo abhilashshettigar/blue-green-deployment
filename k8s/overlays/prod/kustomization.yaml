@@ -1,7 +1,5 @@
 
-namespace: blue-green-deployment
-
-namePrefix: prod-
+namespace: production-blue-green-deployment
 
 resources:
   - ../../base
