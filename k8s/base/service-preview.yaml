@@ -5,6 +5,7 @@ metadata:
   labels:
     app: hello-world-app-preview-svc
 spec:
+  type: LoadBalancer
   selector:
     app: hello-world-app
   ports:
